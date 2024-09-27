@@ -182,7 +182,13 @@ namespace connect.Migrations
                     b.Property<string>("MessageContent")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SenderEmailAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("TimeSent")

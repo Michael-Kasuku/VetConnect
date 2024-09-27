@@ -12,6 +12,7 @@ namespace connect.Pages
         private readonly AppDbContext _context; // Assuming you're using EF for database
         public string? name = "";
         public string? email = "";
+        public string? subject = "";
         public string? message = "";
 
         public IndexModel(ILogger<IndexModel> logger, AppDbContext context)
@@ -29,16 +30,19 @@ namespace connect.Pages
         {
             // Get the data the user has entered
             name = Request.Form["name"];
+            subject = Request.Form["subject"];
             email = Request.Form["email"];
             message = Request.Form["message"];
 
             // Save the data to the database
-            if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(message))
+            if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(subject) && !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(message))
             {
                 try
                 {
                     var newMessage = new Message
                     {
+                        Name = name,
+                        Subject = subject,
                         SenderEmailAddress = email,
                         MessageContent = message,
                         TimeSent = DateTime.Now
