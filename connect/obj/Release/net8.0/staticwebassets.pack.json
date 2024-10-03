@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\img\\about.jpg",
+      "PackagePath": "staticwebassets\\img\\about.jpg"
+    },
+    {
       "Id": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\img\\hero-bg.jpg",
       "PackagePath": "staticwebassets\\img\\hero-bg.jpg"
     },
@@ -25,8 +29,8 @@
       "PackagePath": "staticwebassets\\img\\team\\lopez.jpg"
     },
     {
-      "Id": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\img\\vetkonnect.png",
-      "PackagePath": "staticwebassets\\img\\vetkonnect.png"
+      "Id": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\img\\vetkonnect.jpg",
+      "PackagePath": "staticwebassets\\img\\vetkonnect.jpg"
     },
     {
       "Id": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\js\\site.js",
@@ -463,6 +467,10 @@
     {
       "Id": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\lib\\popperjs\\popper.min.js",
+      "PackagePath": "staticwebassets\\lib\\popperjs\\popper.min.js"
     },
     {
       "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.connect.props",

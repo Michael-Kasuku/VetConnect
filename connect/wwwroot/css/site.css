@@ -1,48 +1,40 @@
 /* Fonts */
 :root {
-    --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
     --heading-font: "Montserrat", sans-serif;
     --nav-font: "Poppins", sans-serif;
-}
-
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root {
-    --background-color: #ffffff; /* Light beige background for a natural, soft feel */
-    --default-color: #000000; /* black for text, ensuring readability */
-    --heading-color: #000000; /* Slightly lighter grey for headings */
-    --accent-color: blue; /* blue color for buttons, links, and key highlights */
+    /* Global Colors - Simplified for a modern, cohesive look */
+    --background-color: #f9f9f9; /* Light gray background for soft contrast */
+    --default-color: #333333; /* Dark grey for text, ensuring readability */
+    --heading-color: #222222; /* Darker grey for headings */
+    --accent-color: #ffcc00; /* Amber for buttons, links, and key highlights */
     --surface-color: #ffffff; /* White for boxed elements to ensure contrast */
     --contrast-color: #ffffff; /* White text color for contrast against dark or accent backgrounds */
+    /* Nav Menu Colors */
+    --nav-color: #333333; /* Dark grey for navmenu links */
+    --nav-hover-color: blue; /* Amber for nav hover for a vibrant feel */
+    --nav-mobile-background-color: #ffffff; /* White for mobile navigation */
+    --nav-dropdown-background-color: #ffffff; /* white background for dropdowns */
+    --nav-dropdown-color: #333333; /* Dark grey for dropdown links */
+    --nav-dropdown-hover-color: #ffffff; /* white for dropdown hover links */
+    /* Smooth scroll */
+    scroll-behavior: smooth;
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. */
-:root {
-    --nav-color: #000000; /* Dark grey for navmenu links */
-    --nav-hover-color: blue; /* Green for nav hover, complementing the farming theme */
-    --nav-mobile-background-color: #ffffff; /* Light beige for mobile navigation */
-    --nav-dropdown-background-color: #ffffff; /* White background for dropdowns */
-    --nav-dropdown-color: #000000; /* Grey color for dropdown links */
-    --nav-dropdown-hover-color: blue; /* Green for dropdown hover links */
-}
-
-/* Color Presets - These classes override global colors when applied to any section or element */
+/* Color Presets - Custom Background Classes */
 .light-background {
     --background-color: #ffffff;
-    --surface-color: #ffffff;
+    --surface-color: #f9f9f9;
 }
 
 .dark-background {
-    --background-color: #060606; /* Earthy brown for dark backgrounds */
-    --default-color: #ffffff;
+    --background-color: #222222; /* Dark grey for dark backgrounds */
+    --default-color: #f9f9f9;
     --heading-color: #ffffff;
-    --surface-color: #ffffff; /* Darker brown for surfaces */
+    --surface-color: #333333;
     --contrast-color: #ffffff;
 }
 
-/* Smooth scroll */
-:root {
-    scroll-behavior: smooth;
-}
 
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
@@ -51,39 +43,34 @@ body {
     color: var(--default-color);
     background-color: var(--background-color);
     font-family: var(--default-font);
+    line-height: 1.6;
 }
 
 a {
-    color: var(--accent-color); /* Amber for links */
+    color: var(--accent-color); /* Blue for links */
     text-decoration: none;
-    transition: 0.3s;
+    transition: color 0.3s ease-in-out;
 }
 
     a:hover {
         color: color-mix(in srgb, var(--accent-color), transparent 25%);
-        text-decoration: none;
     }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     color: var(--heading-color);
     font-family: var(--heading-font);
 }
-
 
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
 .header {
     color: var(--default-color); /* Dark grey for the header text */
-    background-color: var(--background-color); /* Light beige for the header background */
+    background-color: var(--background-color); /* Light grey for the header background */
     padding: 20px 0;
-    transition: all 0.5s;
+    transition: all 0.3s ease-in-out;
     z-index: 997;
+    border-bottom: 1px solid #ddd; /* Subtle border for separation */
 }
 
     .header .logo {
@@ -91,20 +78,20 @@ h6 {
     }
 
         .header .logo img {
-            max-height: 36px;
+            max-height: 40px; /* Slightly larger for better visibility */
             margin-right: 8px;
         }
 
         .header .logo h1 {
-            font-size: 24px;
+            font-size: 22px;
             margin: 0;
             font-weight: 600;
-            color: var(--heading-color); /* Slightly lighter grey for the logo text */
+            color: var(--heading-color); /* Dark grey for the logo text */
         }
 
         .header .logo span {
-            color: var(--accent-color); /* Amber accent for the logo's highlighted part */
-            font-size: 24px;
+            color: var(--accent-color); /* Blue accent for logo's highlighted part */
+            font-size: 22px;
             font-weight: 600;
             padding-left: 3px;
         }
@@ -112,19 +99,53 @@ h6 {
     .header .btn-getstarted,
     .header .btn-getstarted:focus {
         color: var(--contrast-color); /* White text for button */
-        background: var(--accent-color); /* Amber button background */
+        background-color: var(--accent-color); /* Blue button background */
         font-size: 14px;
-        padding: 8px 26px;
+        padding: 10px 30px;
         margin: 0;
         border-radius: 4px;
-        transition: 0.3s;
+        transition: background-color 0.3s ease-in-out;
     }
 
         .header .btn-getstarted:hover,
         .header .btn-getstarted:focus:hover {
-            color: var(--contrast-color); /* White text remains on hover */
-            background: color-mix(in srgb, var(--accent-color), transparent 15%); /* Lighter amber on hover */
+            background: color-mix(in srgb, var(--accent-color), transparent 15%); /* Lighter blue on hover */
         }
+
+.navmenu a {
+    color: var(--nav-color);
+    font-family: var(--nav-font);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 0 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+    .navmenu a:hover {
+        color: var(--nav-hover-color); /* Hover color for navigation */
+    }
+
+/* Dropdown Styling */
+.navmenu .dropdown-menu {
+    background-color: var(--nav-dropdown-background-color);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+    .navmenu .dropdown-menu a {
+        color: var(--nav-dropdown-color);
+        padding: 10px 20px;
+    }
+
+        .navmenu .dropdown-menu a:hover {
+            background-color: var(--nav-hover-color); /* Blue background on hover */
+            color: var(--contrast-color); /* White text on hover */
+        }
+
+/* Sticky Header Shadow */
+.scrolled .header {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for scrolled state */
+}
 
 @media (max-width: 1200px) {
     .header .logo {
@@ -142,33 +163,29 @@ h6 {
     }
 }
 
-.scrolled .header {
-    box-shadow: 0 0 30px 10px #ffffff; /* Subtle shadow for scrolled state */
-}
-
-
-/* Index Page Header
-------------------------------*/
+/*--------------------------------------------------------------
+# Index Page Header
+--------------------------------------------------------------*/
+/* Transparent Header for the Index Page */
 .index-page .header {
-    --background-color: rgba(255, 255, 255, 0);
-    --heading-color: #ffffff;
-    --nav-color: rgba(255, 255, 255, 0.5);
-    --nav-hover-color: #ffffff;
+    --background-color: rgba(255, 255, 255, 0); /* Transparent background for a clean look */
+    --heading-color: #ffffff; /* White text for better contrast against the background */
+    --nav-color: #000000; /* amber navigation links */
+    --nav-hover-color: blue; /* Full white on hover for navigation links */
 }
 
-/* Index Page Header on Scroll
-------------------------------*/
+/* Header Style on Scroll for the Index Page */
 .index-page.scrolled .header {
-    --background-color: #ffffff;
-    --heading-color: #000000;
-    --nav-color: #000000;
-    --nav-hover-color: blue;
+    --background-color: #ffffff; /* Solid white background on scroll */
+    --heading-color: #000000; /* Switch to black for better readability */
+    --nav-color: #000000; /* Black navigation links after scrolling */
+    --nav-hover-color: blue; /* Blue hover effect for better visibility */
 }
 
 /*--------------------------------------------------------------
-# Navigation Menu
+# Navigation Menu - Desktop & Mobile
 --------------------------------------------------------------*/
-/* Navmenu - Desktop */
+/* Desktop Navigation Menu */
 @media (min-width: 1200px) {
     .navmenu {
         padding: 0;
@@ -179,379 +196,228 @@ h6 {
             padding: 0;
             display: flex;
             list-style: none;
-            align-items: center;
+            align-items: center; /* Align items centrally */
         }
 
         .navmenu li {
-            position: relative;
+            position: relative; /* Needed for dropdown positioning */
         }
 
+        /* Navigation Link Styles */
         .navmenu a,
         .navmenu a:focus {
-            color: var(--nav-color);
-            padding: 18px 15px;
+            color: var(--nav-color); /* Default navigation link color */
+            padding: 18px 15px; /* Padding for better clickable area */
             font-size: 16px;
-            font-family: var(--nav-font);
+            font-family: var(--nav-font); /* Use custom font for nav items */
             font-weight: 400;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            white-space: nowrap;
-            transition: 0.3s;
+            white-space: nowrap; /* Prevent text wrapping */
+            transition: 0.3s; /* Smooth transition effect */
         }
 
             .navmenu a i,
             .navmenu a:focus i {
-                font-size: 12px;
-                line-height: 0;
+                font-size: 12px; /* Icon size */
                 margin-left: 5px;
-                transition: 0.3s;
+                transition: 0.3s; /* Smooth icon transition */
             }
 
+        /* Last navigation item without padding on the right */
         .navmenu li:last-child a {
             padding-right: 0;
         }
 
+        /* Hover and Active States for Navigation Links */
         .navmenu li:hover > a,
         .navmenu .active,
         .navmenu .active:focus {
-            color: var(--nav-hover-color);
+            color: var(--nav-hover-color); /* Hover color */
         }
 
+        /* Dropdown Menu Styles */
         .navmenu .dropdown ul {
             margin: 0;
             padding: 10px 0;
-            background: var(--nav-dropdown-background-color);
-            display: block;
+            background: var(--nav-dropdown-background-color); /* Background for dropdown */
             position: absolute;
             visibility: hidden;
             left: 14px;
             top: 130%;
             opacity: 0;
-            transition: 0.3s;
+            transition: 0.3s; /* Smooth dropdown transition */
             border-radius: 4px;
             z-index: 99;
-            box-shadow: 0px 0px 30px white;
+            box-shadow: 0px 0px 30px white; /* Soft shadow for dropdowns */
         }
 
+            /* Ensure minimum width for dropdown items */
             .navmenu .dropdown ul li {
                 min-width: 200px;
             }
 
+            /* Dropdown Link Styles */
             .navmenu .dropdown ul a {
                 padding: 10px 20px;
                 font-size: 15px;
-                text-transform: none;
-                color: var(--nav-dropdown-color);
-            }
-
-                .navmenu .dropdown ul a i {
-                    font-size: 12px;
-                }
-
-                .navmenu .dropdown ul a:hover,
-                .navmenu .dropdown ul .active:hover,
-                .navmenu .dropdown ul li:hover > a {
-                    color: var(--nav-dropdown-hover-color);
-                }
-
-        .navmenu .dropdown:hover > ul {
-            opacity: 1;
-            top: 100%;
-            visibility: visible;
-        }
-
-        .navmenu .dropdown .dropdown ul {
-            top: 0;
-            left: -90%;
-            visibility: hidden;
-        }
-
-        .navmenu .dropdown .dropdown:hover > ul {
-            opacity: 1;
-            top: 0;
-            left: -100%;
-            visibility: visible;
-        }
-}
-
-/* Navmenu - Mobile */
-@media (max-width: 1199px) {
-    .mobile-nav-toggle {
-        color: var(--nav-color);
-        font-size: 28px;
-        line-height: 0;
-        margin-right: 10px;
-        cursor: pointer;
-        transition: color 0.3s;
-    }
-
-    .navmenu {
-        padding: 0;
-        z-index: 9997;
-    }
-
-        .navmenu ul {
-            display: none;
-            list-style: none;
-            position: absolute;
-            inset: 60px 20px 20px 20px;
-            padding: 10px 0;
-            margin: 0;
-            border-radius: 6px;
-            background-color: var(--nav-mobile-background-color);
-            overflow-y: auto;
-            transition: 0.3s;
-            z-index: 9998;
-            box-shadow: 0px 0px 30px white;
-        }
-
-        .navmenu a,
-        .navmenu a:focus {
-            color: var(--nav-dropdown-color);
-            padding: 10px 20px;
-            font-family: var(--nav-font);
-            font-size: 17px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            white-space: nowrap;
-            transition: 0.3s;
-        }
-
-            .navmenu a i,
-            .navmenu a:focus i {
-                font-size: 12px;
-                line-height: 0;
-                margin-left: 5px;
-                width: 30px;
-                height: 30px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                transition: 0.3s;
-                background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-            }
-
-                .navmenu a i:hover,
-                .navmenu a:focus i:hover {
-                    background-color: var(--accent-color);
-                    color: var(--contrast-color);
-                }
-
-            .navmenu a:hover,
-            .navmenu .active,
-            .navmenu .active:focus {
-                color: var(--nav-dropdown-hover-color);
-            }
-
-                .navmenu .active i,
-                .navmenu .active:focus i {
-                    background-color: var(--accent-color);
-                    color: var(--contrast-color);
-                    transform: rotate(180deg);
-                }
-
-        .navmenu .dropdown ul {
-            position: static;
-            display: none;
-            z-index: 99;
-            padding: 10px 0;
-            margin: 10px 20px;
-            background-color: var(--nav-dropdown-background-color);
-            border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-            box-shadow: none;
-            transition: all 0.5s ease-in-out;
-        }
-
-            .navmenu .dropdown ul ul {
-                background-color: white;
-            }
-
-        .navmenu .dropdown > .dropdown-active {
-            display: block;
-            background-color: white;
-        }
-
-    .mobile-nav-active {
-        overflow: hidden;
-    }
-
-        .mobile-nav-active .mobile-nav-toggle {
-            color: #ffffff;
-            position: absolute;
-            font-size: 32px;
-            top: 15px;
-            right: 15px;
-            margin-right: 0;
-            z-index: 9999;
-        }
-
-        .mobile-nav-active .navmenu {
-            position: fixed;
-            overflow: hidden;
-            inset: 0;
-            background: white;
-            transition: 0.3s;
-        }
-
-            .mobile-nav-active .navmenu > ul {
+                color: var(--nav-dropdown-color); /* Default dropdown color */
+                font-weight: 400;
                 display: block;
+                transition: 0.3s; /* Smooth transition for dropdown links */
             }
+
+                /* Hover State for Dropdown Links */
+                .navmenu .dropdown ul a:hover {
+                    color: var(--nav-dropdown-hover-color); /* Hover color for dropdown links */
+                }
+
+        /* Display dropdown on hover */
+        .navmenu li:hover > ul {
+            visibility: visible;
+            opacity: 1; /* Make visible */
+        }
 }
 
-/*--------------------------------------------------------------
-# Global Footer
---------------------------------------------------------------*/
-.footer {
-    color: var(--default-color);
-    background-color: var(--background-color);
-    font-size: 14px;
-    padding-bottom: 50px;
-    position: relative;
-}
-
-    .footer .footer-top {
-        padding-top: 50px;
+/* Mobile Navigation Menu */
+@media (max-width: 1200px) {
+    .navmenu {
+        position: fixed; /* Fixed position for mobile menu */
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100%; /* Full height */
+        background: var(--nav-mobile-background-color); /* White background for mobile */
+        padding-top: 20px; /* Spacing at the top */
+        z-index: 1000;
+        transform: translateX(100%); /* Hidden by default */
+        transition: transform 0.3s ease; /* Smooth slide-in effect */
     }
 
-    .footer .footer-about .logo {
-        margin-bottom: 25px;
-    }
-
-        .footer .footer-about .logo img {
-            max-height: 40px;
-            margin-right: 6px;
+        .navmenu.open {
+            transform: translateX(0); /* Show menu */
         }
 
-        .footer .footer-about .logo span {
-            color: var(--heading-color);
-            font-size: 30px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            font-family: var(--heading-font);
-        }
-
-    .footer .footer-about p {
-        font-size: 14px;
-        font-family: var(--heading-font);
-    }
-
-    .footer .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
-        font-size: 16px;
-        color: color-mix(in srgb, var(--default-color), transparent 50%);
-        margin-right: 10px;
-        transition: 0.3s;
-    }
-
-        .footer .social-links a:hover {
-            color: var(--accent-color);
-            border-color: var(--accent-color);
-        }
-
-    .footer h4 {
-        font-size: 16px;
-        font-weight: bold;
-        position: relative;
-        padding-bottom: 12px;
-    }
-
-    .footer .footer-links {
-        margin-bottom: 30px;
-    }
-
-        .footer .footer-links ul {
-            list-style: none;
+        /* Mobile Navigation Link Styles */
+        .navmenu ul {
+            display: block;
             padding: 0;
             margin: 0;
         }
 
-            .footer .footer-links ul i {
-                padding-right: 2px;
-                font-size: 12px;
-                line-height: 0;
-            }
-
-            .footer .footer-links ul li {
-                padding: 10px 0;
-                display: flex;
-                align-items: center;
-            }
-
-                .footer .footer-links ul li:first-child {
-                    padding-top: 0;
-                }
-
-            .footer .footer-links ul a {
-                color: color-mix(in srgb, var(--default-color), transparent 20%);
-                display: inline-block;
-                line-height: 1;
-            }
-
-                .footer .footer-links ul a:hover {
-                    color: var(--accent-color);
-                }
-
-    .footer .footer-contact p {
-        margin-bottom: 5px;
-    }
-
-    .footer .copyright {
-        padding-top: 25px;
-        padding-bottom: 25px;
-        background-color: white;
-    }
-
-        .footer .copyright p {
-            margin-bottom: 0;
+        .navmenu li {
+            border-bottom: 1px solid #ddd; /* Divider between menu items */
         }
 
-    .footer .credits {
-        margin-top: 6px;
-        font-size: 13px;
+        .navmenu a {
+            color: var(--nav-dropdown-color); /* Default color for mobile nav links */
+            padding: 15px; /* Spacing for mobile */
+            font-size: 18px; /* Larger font size */
+        }
+
+            /* Hover State for Mobile Links */
+            .navmenu a:hover {
+                background-color: var(--nav-hover-color); /* Hover effect for mobile */
+                color: var(--contrast-color); /* White text on hover */
+            }
+}
+
+.footer {
+    background: linear-gradient(135deg, #6c757d 0%, #343a40 100%);
+    color: #fff;
+    padding: 40px 0;
+}
+
+    .footer h4 {
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #FFD700; /* Gold color for headings */
     }
+
+    .footer p {
+        margin-bottom: 10px;
+    }
+
+    .footer .social-links {
+        justify-content: space-between;
+    }
+
+    .footer .social-icon {
+        margin-right: 15px;
+        font-size: 24px;
+        transition: transform 0.3s;
+    }
+
+        .footer .social-icon:hover {
+            transform: scale(1.2);
+        }
+
+    .footer a {
+        color: #ffffff; /* White color for links */
+        transition: color 0.3s;
+    }
+
+        .footer a:hover {
+            color: #FFD700; /* Change color on hover */
+        }
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .footer-links ul li {
+        margin-bottom: 10px;
+    }
+
+        .footer-links ul li a {
+            text-decoration: none;
+        }
+
+            .footer-links ul li a:hover {
+                text-decoration: underline;
+            }
+
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #eaeaea; /* Light grey for copyright */
+}
+
 
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
 #preloader {
-    position: fixed;
-    inset: 0;
-    z-index: 999999;
-    overflow: hidden;
-    background: var(--background-color);
-    transition: all 0.6s ease-out;
+    position: fixed; /* Fixes the preloader to the viewport */
+    inset: 0; /* Sets all sides (top, right, bottom, left) to 0 for full coverage */
+    z-index: 999999; /* Ensures the preloader is on top of all other elements */
+    overflow: hidden; /* Hides any overflow content */
+    background: var(--background-color); /* Sets the background color using a variable */
+    transition: all 0.6s ease-out; /* Smooth transition for all properties over 0.6 seconds */
 }
 
     #preloader:before {
-        content: "";
-        position: fixed;
-        top: calc(50% - 30px);
-        left: calc(50% - 30px);
-        border: 6px solid #ffffff;
-        border-color: var(--accent-color) transparent var(--accent-color) transparent;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        animation: animate-preloader 1.5s linear infinite;
+        content: ""; /* Creates an empty content for the pseudo-element */
+        position: fixed; /* Fixes the pseudo-element to the viewport */
+        top: calc(50% - 30px); /* Centers the spinner vertically */
+        left: calc(50% - 30px); /* Centers the spinner horizontally */
+        border: 6px solid #ffffff; /* Sets a white border for the spinner */
+        border-color: var(--accent-color) transparent var(--accent-color) transparent; /* Creates a colorful border effect */
+        border-radius: 50%; /* Makes the spinner circular */
+        width: 60px; /* Sets the width of the spinner */
+        height: 60px; /* Sets the height of the spinner */
+        animation: animate-preloader 1.5s linear infinite; /* Applies an infinite rotating animation */
     }
 
 @keyframes animate-preloader {
     0% {
-        transform: rotate(0deg);
+        transform: rotate(0deg); /* Starts the rotation from 0 degrees */
     }
 
     100% {
-        transform: rotate(360deg);
+        transform: rotate(360deg); /* Ends the rotation at 360 degrees */
     }
 }
 
@@ -559,41 +425,41 @@ h6 {
 # Scroll Top Button
 --------------------------------------------------------------*/
 .scroll-top {
-    position: fixed;
-    visibility: hidden;
-    opacity: 0;
-    right: 15px;
-    bottom: 15px;
-    z-index: 99999;
-    background-color: var(--accent-color);
-    width: 40px;
-    height: 40px;
-    border-radius: 4px;
-    transition: all 0.4s;
+    position: fixed; /* Fixes the button to the viewport */
+    visibility: hidden; /* Hides the button by default */
+    opacity: 0; /* Sets initial opacity to 0 for fading effect */
+    right: 15px; /* Positions the button 15px from the right */
+    bottom: 15px; /* Positions the button 15px from the bottom */
+    z-index: 99999; /* Ensures the button is on top of other elements */
+    background-color: var(--accent-color); /* Sets the background color using a variable */
+    width: 40px; /* Sets the width of the button */
+    height: 40px; /* Sets the height of the button */
+    border-radius: 4px; /* Rounds the corners of the button */
+    transition: all 0.4s; /* Smooth transition for all properties over 0.4 seconds */
 }
 
     .scroll-top i {
-        font-size: 24px;
-        color: var(--contrast-color);
-        line-height: 0;
+        font-size: 24px; /* Sets the font size for the icon */
+        color: var(--contrast-color); /* Sets the icon color using a variable */
+        line-height: 0; /* Aligns the icon properly within the button */
     }
 
     .scroll-top:hover {
-        background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-        color: var(--contrast-color);
+        background-color: color-mix(in srgb, var(--accent-color), transparent 20%); /* Changes background color on hover */
+        color: var(--contrast-color); /* Keeps the icon color on hover */
     }
 
     .scroll-top.active {
-        visibility: visible;
-        opacity: 1;
+        visibility: visible; /* Shows the button when active */
+        opacity: 1; /* Sets opacity to 1 for fading effect */
     }
 
 /*--------------------------------------------------------------
-# Disable aos animation delay on mobile devices
+# Disable AOS Animation Delay on Mobile Devices
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
     [data-aos-delay] {
-        transition-delay: 0 !important;
+        transition-delay: 0 !important; /* Removes animation delay for mobile devices */
     }
 }
 
@@ -601,44 +467,44 @@ h6 {
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
 .page-title {
-    color: var(--default-color);
-    background-color: var(--background-color);
-    position: relative;
+    color: var(--default-color); /* Sets the text color for the page title */
+    background-color: var(--background-color); /* Sets the background color for the page title */
+    position: relative; /* Allows positioning of child elements relative to this element */
 }
 
     .page-title .heading {
-        padding: 80px 0;
-        border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+        padding: 80px 0; /* Adds vertical padding to the heading */
+        border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); /* Adds a top border with mixed color */
     }
 
         .page-title .heading h1 {
-            font-size: 38px;
-            font-weight: 700;
+            font-size: 38px; /* Sets the font size for the main heading */
+            font-weight: 700; /* Makes the main heading bold */
         }
 
     .page-title nav {
-        background-color: color-mix(in srgb, var(--default-color), transparent 95%);
-        padding: 20px 0;
+        background-color: color-mix(in srgb, var(--default-color), transparent 95%); /* Sets the background color for the navigation area */
+        padding: 20px 0; /* Adds vertical padding to the navigation area */
     }
 
         .page-title nav ol {
-            display: flex;
-            flex-wrap: wrap;
-            list-style: none;
-            margin: 0;
-            font-size: 16px;
-            font-weight: 600;
+            display: flex; /* Uses flexbox for layout */
+            flex-wrap: wrap; /* Allows items to wrap onto the next line */
+            list-style: none; /* Removes default list styling */
+            margin: 0; /* Removes default margin */
+            font-size: 16px; /* Sets the font size for breadcrumb items */
+            font-weight: 600; /* Makes breadcrumb items semi-bold */
         }
 
             .page-title nav ol li + li {
-                padding-left: 10px;
+                padding-left: 10px; /* Adds space to the left of each breadcrumb item, except the first */
             }
 
                 .page-title nav ol li + li::before {
-                    content: "/";
-                    display: inline-block;
-                    padding-right: 10px;
-                    color: color-mix(in srgb, var(--default-color), transparent 70%);
+                    content: "/"; /* Adds a separator before each breadcrumb item */
+                    display: inline-block; /* Makes the separator an inline block */
+                    padding-right: 10px; /* Adds space to the right of the separator */
+                    color: color-mix(in srgb, var(--default-color), transparent 70%); /* Sets the color of the separator */
                 }
 
 /*--------------------------------------------------------------
@@ -646,18 +512,18 @@ h6 {
 --------------------------------------------------------------*/
 section,
 .section {
-    color: var(--default-color);
-    background-color: var(--background-color);
-    padding: 60px 0;
-    scroll-margin-top: 98px;
-    overflow: clip;
+    color: var(--default-color); /* Sets the text color for the sections */
+    background-color: var(--background-color); /* Sets the background color for the sections */
+    padding: 60px 0; /* Adds vertical padding (60px) to the top and bottom of each section */
+    scroll-margin-top: 98px; /* Adds a top margin for smooth scrolling when links to sections are clicked */
+    overflow: clip; /* Clips the content that overflows the element's box */
 }
 
+/* Responsive adjustments for smaller screens */
 @media (max-width: 1199px) {
-
     section,
     .section {
-        scroll-margin-top: 64px;
+        scroll-margin-top: 64px; /* Reduces the scroll margin for smaller screens */
     }
 }
 
@@ -665,605 +531,859 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-    text-align: center;
-    padding-bottom: 60px;
-    position: relative;
+    text-align: center; /* Centers the title text */
+    padding-bottom: 60px; /* Adds padding below the title */
+    position: relative; /* Positions the title relative to its normal position */
 }
 
     .section-title h2 {
-        font-size: 32px;
-        font-weight: 700;
-        position: relative;
+        font-size: 32px; /* Sets the font size for the section title */
+        font-weight: 700; /* Makes the section title bold */
+        position: relative; /* Positions the title relative to its normal position for child elements */
     }
 
         .section-title h2:before,
         .section-title h2:after {
-            content: "";
-            width: 50px;
-            height: 2px;
-            background: var(--accent-color);
-            display: inline-block;
+            content: ""; /* Creates an empty content for pseudo-elements */
+            width: 50px; /* Sets the width of the line */
+            height: 2px; /* Sets the height of the line */
+            background: var(--accent-color); /* Sets the background color of the line */
+            display: inline-block; /* Makes the lines inline blocks to sit beside the title */
         }
 
         .section-title h2:before {
-            margin: 0 15px 10px 0;
+            margin: 0 15px 10px 0; /* Adds margin to the right and bottom of the left line */
         }
 
         .section-title h2:after {
-            margin: 0 0 10px 15px;
+            margin: 0 0 10px 15px; /* Adds margin to the bottom and left of the right line */
         }
 
     .section-title p {
-        margin-bottom: 0;
+        margin-bottom: 0; /* Removes bottom margin from paragraphs within section titles */
     }
 
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    padding: 80px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%; /* The hero section takes up the full width of the viewport */
+    min-height: 100vh; /* Ensures the hero section covers the full height of the viewport */
+    position: relative; /* Positions the hero section relative to other elements */
+    padding: 80px 0; /* Adds vertical padding inside the hero section */
+    display: flex; /* Uses Flexbox to align content inside the hero section */
+    align-items: center; /* Vertically centers content */
+    justify-content: center; /* Horizontally centers content */
 }
 
     .hero img {
-        position: absolute;
-        inset: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 1;
+        position: absolute; /* Positions the image absolutely inside the hero */
+        inset: 0; /* Stretches the image to all four edges of the hero */
+        display: block; /* Ensures the image is displayed as a block-level element */
+        width: 100%; /* Sets the image to take up the full width of its container */
+        height: 100%; /* Sets the image to take up the full height */
+        object-fit: cover; /* Ensures the image covers the hero section without distortion */
+        z-index: 1; /* Sets the image layer behind the other elements in the hero */
     }
 
     .hero:before {
-        content: "";
-        background: color-mix(in srgb, var(--background-color), transparent 50%);
-        position: absolute;
-        inset: 0;
-        z-index: 2;
+        content: ""; /* Empty content for the pseudo-element */
+        background: color-mix(in srgb, var(--background-color), transparent 50%); /* Creates a semi-transparent overlay */
+        position: absolute; /* Positions it to cover the whole hero section */
+        inset: 0; /* Stretches it to all four edges of the hero */
+        z-index: 2; /* Places the overlay between the image and the text */
     }
 
     .hero .container {
-        position: relative;
-        z-index: 3;
+        position: relative; /* Positions the content container inside the hero */
+        z-index: 3; /* Ensures the container appears above the background and overlay */
     }
 
     .hero h2 {
-        margin: 0;
-        font-size: 44px;
-        font-weight: 700;
+        margin: 0; /* Removes default margin */
+        font-size: 44px; /* Large, bold text size for headings */
+        font-weight: 700; /* Bold text for strong emphasis */
     }
 
     .hero p {
-        color: color-mix(in srgb, var(--default-color), transparent 20%);
-        margin: 5px 0 0 0;
-        font-size: 20px;
+        color: color-mix(in srgb, var(--default-color), transparent 20%); /* Subtle text color to contrast the hero background */
+        margin: 5px 0 0 0; /* Adds a small margin to separate the paragraph from the heading */
+        font-size: 20px; /* Medium-sized font for the hero paragraph */
     }
 
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
 .about .content h3 {
-    font-size: 24px; /* Adjusted font size for better visibility */
-    font-weight: 700; /* Stronger emphasis for the section title */
-    line-height: 1.5; /* Improved line height for better readability */
-    padding: 10px 20px;
-    background: white;
-    color: var(--accent-color);
-    border-radius: 7px;
-    display: inline-block;
-    margin-bottom: 20px; /* Added margin for spacing */
+    font-size: 24px; /* Sets a slightly smaller font size than the hero for the section titles */
+    font-weight: 700; /* Bold text for the section titles */
+    line-height: 1.5; /* Improves readability by increasing line spacing */
+    padding: 10px 20px; /* Adds padding inside the section title box */
+    background: white; /* White background for the section title box */
+    color: var(--accent-color); /* Accent color for the text */
+    border-radius: 7px; /* Rounds the corners of the section title box */
+    display: inline-block; /* Ensures the title box does not stretch to full width */
+    margin-bottom: 20px; /* Adds spacing below the section title */
 }
 
 .about .content p {
-    font-size: 1.125rem; /* Slightly smaller than lead text for standard paragraphs */
-    line-height: 1.6; /* Enhanced line height for readability */
+    font-size: 1.125rem; /* A slightly smaller font size for body text */
+    line-height: 1.6; /* Improves readability by increasing line spacing */
 }
 
 .about .icon-box {
-    background-color: var(--surface-color);
-    padding: 40px; /* Consistent padding for aesthetic balance */
-    box-shadow: 0px 10px 30px white; /* Subtle shadow for depth */
-    border-radius: 10px;
-    transition: all 0.3s ease;
+    background-color: var(--surface-color); /* Sets the background color for the icon box */
+    padding: 40px; /* Adds ample padding inside the icon box */
+    box-shadow: 0px 10px 30px white; /* Creates a subtle shadow around the box */
+    border-radius: 10px; /* Rounds the corners of the icon box */
+    transition: all 0.3s ease; /* Adds smooth transitions for hover effects */
 }
 
     .about .icon-box i {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px; /* Adjusted margin for consistency */
-        font-size: 36px; /* Slightly larger icon for better visibility */
-        line-height: 0;
-        transition: all 0.4s ease;
-        background-color: white;
-        color: var(--accent-color);
+        width: 80px; /* Sets the width of the icon */
+        height: 80px; /* Sets the height of the icon */
+        border-radius: 50%; /* Makes the icon box a circle */
+        display: inline-flex; /* Uses Flexbox for centering */
+        align-items: center; /* Vertically centers the icon */
+        justify-content: center; /* Horizontally centers the icon */
+        margin-bottom: 20px; /* Adds space below the icon */
+        font-size: 36px; /* Makes the icon larger */
+        line-height: 0; /* Resets line height */
+        transition: all 0.4s ease; /* Smooth transition for hover effect */
+        background-color: white; /* White background for the icon */
+        color: var(--accent-color); /* Accent color for the icon */
     }
 
     .about .icon-box:hover i {
-        background-color: var(--accent-color);
-        color: var(--contrast-color);
+        background-color: var(--accent-color); /* Changes the icon background color on hover */
+        color: var(--contrast-color); /* Changes the icon color on hover */
     }
 
 /* Adjustments for layout on smaller screens */
 @media (max-width: 768px) {
     .about .icon-box {
-        padding: 30px; /* Reduced padding for smaller devices */
+        padding: 30px; /* Reduces padding for smaller screen sizes */
     }
 }
-
 
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
 .services .service-item {
-    position: relative;
-    padding-top: 40px;
+    position: relative; /* Sets the positioning context for absolute elements inside */
+    padding-top: 40px; /* Adds space above each service item */
 }
 
     .services .service-item:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: #000000;
+        content: ""; /* Empty content for the pseudo-element */
+        position: absolute; /* Positions the line absolutely within the service item */
+        top: 0; /* Aligns the line to the top of the service item */
+        left: 0; /* Aligns the line to the left */
+        right: 0; /* Aligns the line to the right */
+        height: 2px; /* Sets the height of the line */
+        background: #000000; /* Color of the top line */
     }
 
     .services .service-item::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 30px;
-        height: 2px;
-        background: var(--accent-color);
-        border-right: 5px solid var(--background-color);
+        content: ""; /* Empty content for the pseudo-element */
+        position: absolute; /* Positions this line absolutely */
+        top: 0; /* Aligns the line to the top */
+        left: 0; /* Aligns the line to the left */
+        width: 30px; /* Width of the accent line */
+        height: 2px; /* Height of the accent line */
+        background: var(--accent-color); /* Uses the accent color for the line */
+        border-right: 5px solid var(--background-color); /* Adds a border to the right with the background color */
     }
 
     .services .service-item .icon {
-        width: 48px;
-        height: 48px;
-        position: relative;
-        margin-right: 50px;
-        line-height: 0;
+        width: 48px; /* Sets a fixed width for the icon container */
+        height: 48px; /* Sets a fixed height for the icon container */
+        position: relative; /* Positions the icon container relative to its parent */
+        margin-right: 50px; /* Adds space to the right of the icon */
+        line-height: 0; /* Resets line height to eliminate extra spacing */
     }
 
-
         .services .service-item .icon i {
-            color: color-mix(in srgb, var(--default-color), transparent 20%);
-            font-size: 56px;
-            transition: ease-in-out 0.3s;
-            z-index: 2;
-            position: relative;
+            color: color-mix(in srgb, var(--default-color), transparent 20%); /* Slightly transparent icon color */
+            font-size: 56px; /* Large font size for the icon */
+            transition: ease-in-out 0.3s; /* Smooth transition for hover effects */
+            z-index: 2; /* Ensures the icon appears above the pseudo-elements */
+            position: relative; /* Positions the icon relative to the icon container */
         }
 
         .services .service-item .icon:before {
-            position: absolute;
-            content: "";
-            height: 30px;
-            width: 30px;
-            background: white;
-            border-radius: 50px;
-            z-index: 1;
-            bottom: -15px;
-            right: -15px;
-            transition: 0.3s;
+            position: absolute; /* Positions the circle behind the icon */
+            content: ""; /* Empty content for the pseudo-element */
+            height: 30px; /* Height of the circle */
+            width: 30px; /* Width of the circle */
+            background: white; /* White background for the circle */
+            border-radius: 50px; /* Rounds the corners to create a circle */
+            z-index: 1; /* Places the circle behind the icon */
+            bottom: -15px; /* Positions the circle below the icon */
+            right: -15px; /* Positions the circle to the right of the icon */
+            transition: 0.3s; /* Smooth transition for hover effects */
         }
 
     .services .service-item .title {
-        font-weight: 700;
-        margin-bottom: 15px;
-        font-size: 18px;
+        font-weight: 700; /* Bold text for service titles */
+        margin-bottom: 15px; /* Adds space below the title */
+        font-size: 18px; /* Sets the font size for the title */
     }
 
         .services .service-item .title a {
-            color: var(--heading-color);
+            color: var(--heading-color); /* Sets the link color to the heading color */
         }
 
             .services .service-item .title a:hover {
-                color: var(--accent-color);
+                color: var(--accent-color); /* Changes the link color on hover to the accent color */
             }
 
     .services .service-item .description {
-        line-height: 24px;
-        font-size: 14px;
+        line-height: 24px; /* Sets line height for improved readability */
+        font-size: 14px; /* Sets a smaller font size for descriptions */
     }
 
 /*--------------------------------------------------------------
 # Faq Section
 --------------------------------------------------------------*/
 .faq .content h3 {
-    font-weight: 500;
-    font-size: 36px;
-    color: var(--primary-color);
+    font-weight: 500; /* Medium weight for headings */
+    font-size: 36px; /* Larger font size for visibility */
+    color: var(--primary-color); /* Primary color for headings */
 }
 
 .faq .content p {
-    font-size: 16px;
-    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    font-size: 16px; /* Standard font size for paragraph text */
+    color: color-mix(in srgb, var(--default-color), transparent 30%); /* Lightened default color for improved readability */
 }
 
 .faq .faq-container .faq-item {
-    background-color: var(--surface-color);
-    position: relative;
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0px 5px 25px white;
-    transition: background-color 0.3s;
+    background-color: var(--surface-color); /* Background color for each FAQ item */
+    position: relative; /* Establishes a positioning context for child elements */
+    padding: 25px; /* Inner spacing for comfort */
+    margin-bottom: 20px; /* Space between FAQ items */
+    box-shadow: 0px 5px 25px white; /* Soft shadow for depth */
+    transition: background-color 0.3s; /* Smooth transition for background color on hover */
 }
 
     .faq .faq-container .faq-item:hover {
-        background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+        background-color: color-mix(in srgb, var(--accent-color), transparent 90%); /* Accent color on hover for interactivity */
     }
 
     .faq .faq-container .faq-item:last-child {
-        margin-bottom: 0;
+        margin-bottom: 0; /* Removes margin for the last item */
     }
 
     .faq .faq-container .faq-item h3 {
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 28px;
-        margin: 0 30px 0 0;
-        cursor: pointer;
-        display: flex;
-        align-items: flex-start;
-        transition: color 0.3s;
+        font-weight: 600; /* Strong weight for FAQ titles */
+        font-size: 20px; /* Font size for titles */
+        line-height: 28px; /* Line height for readability */
+        margin: 0 30px 0 0; /* Margin for spacing */
+        cursor: pointer; /* Indicates that the title is clickable */
+        display: flex; /* Flexbox for alignment */
+        align-items: flex-start; /* Aligns items to the start of the container */
+        transition: color 0.3s; /* Smooth transition for title color on hover */
     }
 
         .faq .faq-container .faq-item h3 .num {
-            color: var(--accent-color);
-            padding-right: 8px;
+            color: var(--accent-color); /* Accent color for numbering */
+            padding-right: 8px; /* Space between number and text */
         }
 
         .faq .faq-container .faq-item h3:hover {
-            color: var(--accent-color);
+            color: var(--accent-color); /* Changes title color on hover for emphasis */
         }
 
     .faq .faq-container .faq-item .faq-content {
-        display: grid;
-        grid-template-rows: 0fr;
-        transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        visibility: hidden;
-        opacity: 0;
+        display: grid; /* Grid layout for FAQ content */
+        grid-template-rows: 0fr; /* Sets initial height to zero */
+        transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions for visibility and opacity */
+        visibility: hidden; /* Initially hidden content */
+        opacity: 0; /* Fully transparent */
     }
 
         .faq .faq-container .faq-item .faq-content p {
-            margin-bottom: 0;
+            margin-bottom: 0; /* Removes default bottom margin for paragraphs */
         }
 
     .faq .faq-container .faq-item .faq-toggle {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 16px;
-        transition: transform 0.3s;
-        cursor: pointer;
+        position: absolute; /* Positions the toggle button absolutely */
+        top: 20px; /* Distance from the top of the container */
+        right: 20px; /* Distance from the right side */
+        font-size: 16px; /* Font size for the toggle button */
+        transition: transform 0.3s; /* Smooth rotation for the toggle */
+        cursor: pointer; /* Indicates clickable element */
     }
 
         .faq .faq-container .faq-item .faq-toggle:hover {
-            color: var(--accent-color);
+            color: var(--accent-color); /* Changes color on hover for visibility */
         }
 
 .faq .faq-container .faq-active h3 {
-    color: var(--accent-color);
+    color: var(--accent-color); /* Changes title color for active FAQ */
 }
 
 .faq .faq-container .faq-active .faq-content {
-    grid-template-rows: 1fr;
-    visibility: visible;
-    opacity: 1;
-    padding-top: 10px;
+    grid-template-rows: 1fr; /* Sets height to occupy space */
+    visibility: visible; /* Makes content visible when active */
+    opacity: 1; /* Fully opaque */
+    padding-top: 10px; /* Adds space above the content */
 }
 
 .faq .faq-container .faq-active .faq-toggle {
-    transform: rotate(90deg);
-    color: var(--accent-color);
+    transform: rotate(90deg); /* Rotates toggle button when active */
+    color: var(--accent-color); /* Changes color to accent when active */
 }
 
 .faq .btn-link {
-    text-decoration: none;
-    color: inherit;
-    font-size: 18px;
-    font-weight: 600;
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits color from parent */
+    font-size: 18px; /* Font size for links */
+    font-weight: 600; /* Bold weight for emphasis */
 }
 
     .faq .btn-link:hover {
-        color: var(--accent-color);
+        color: var(--accent-color); /* Changes link color on hover */
     }
-
 
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
 .team .member {
-    position: relative;
+    position: relative; /* Allows positioning of child elements relative to the member */
 }
 
     .team .member .member-img {
-        margin: 0 80px;
-        border-radius: 50%;
-        overflow: hidden;
-        position: relative;
-        border: 4px solid var(--background-color);
-        box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2);
+        margin: 0 80px; /* Horizontal margin for spacing */
+        border-radius: 50%; /* Circular shape for member images */
+        overflow: hidden; /* Ensures content stays within the circular border */
+        position: relative; /* Establishes a positioning context for child elements */
+        border: 4px solid var(--background-color); /* Border around the image */
+        box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
     }
 
 @media (max-width: 1024px) {
     .team .member .member-img {
-        margin: 0 60px;
+        margin: 0 60px; /* Reduced margin for smaller screens */
     }
 }
 
 .team .member .member-img img {
-    position: relative;
-    z-index: 1;
+    position: relative; /* Allows the image to sit on top of the member image container */
+    z-index: 1; /* Stacks the image above the social overlay */
 }
 
 .team .member .member-img .social {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    padding-bottom: 20px;
-    transition: 0.3s;
-    visibility: hidden;
-    opacity: 0;
+    position: absolute; /* Positions social icons on top of the member image */
+    inset: 0; /* Covers the entire image area */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    display: flex; /* Flexbox layout for centering icons */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    z-index: 2; /* Stacks the overlay above other elements */
+    padding-bottom: 20px; /* Bottom padding for spacing */
+    transition: 0.3s; /* Smooth transition for visibility effects */
+    visibility: hidden; /* Initially hidden social icons */
+    opacity: 0; /* Fully transparent */
 }
 
     .team .member .member-img .social a {
-        transition: 0.3s;
-        color: var(--contrast-color);
-        font-size: 20px;
-        margin: 0 8px;
+        transition: 0.3s; /* Smooth transition for link color on hover */
+        color: var(--contrast-color); /* Color for social media icons */
+        font-size: 20px; /* Font size for social media icons */
+        margin: 0 8px; /* Spacing between icons */
     }
 
         .team .member .member-img .social a:hover {
-            color: var(--accent-color);
+            color: var(--accent-color); /* Changes icon color on hover for emphasis */
         }
 
 .team .member .member-info {
-    margin-top: 30px;
+    margin-top: 30px; /* Space above member info */
 }
 
     .team .member .member-info h4 {
-        font-weight: 700;
-        margin-bottom: 6px;
-        font-size: 18px;
+        font-weight: 700; /* Bold weight for member names */
+        margin-bottom: 6px; /* Space below the name */
+        font-size: 18px; /* Font size for member names */
     }
 
     .team .member .member-info span {
-        font-style: italic;
-        display: block;
-        font-size: 15px;
-        color: color-mix(in srgb, var(--default-color), transparent 40%);
-        margin-bottom: 10px;
+        font-style: italic; /* Italic style for titles */
+        display: block; /* Takes full width */
+        font-size: 15px; /* Font size for titles */
+        color: color-mix(in srgb, var(--default-color), transparent 40%); /* Lightened color for contrast */
+        margin-bottom: 10px; /* Space below titles */
     }
 
     .team .member .member-info p {
-        margin-bottom: 0;
-        font-size: 14px;
+        margin-bottom: 0; /* No margin below paragraphs */
+        font-size: 14px; /* Font size for additional info */
     }
 
 .team .member:hover .member-img .social {
-    padding-bottom: 0;
-    visibility: visible;
-    opacity: 1;
+    padding-bottom: 0; /* Removes padding when hovering over member */
+    visibility: visible; /* Makes social icons visible */
+    opacity: 1; /* Fully opaque for visibility */
 }
 
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
-.contact .info-item {
-    background: white;
-    padding: 30px;
+.contact {
+    background: linear-gradient(135deg, #e7f0f7 0%, #cfd9df 100%);
+    padding: 60px 0;
 }
 
-    .contact .info-item i {
-        font-size: 38px;
-        line-height: 0;
-        color: var(--accent-color);
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+    .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        color: #007bff; /* Primary color */
     }
 
-    .contact .info-item h3 {
+    .section-title p {
+        font-size: 18px;
+        color: #555;
+    }
+
+.info-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+    .info-item i {
+        font-size: 36px;
+        color: #007bff; /* Match with the primary color */
+        margin-bottom: 10px;
+    }
+
+    .info-item h3 {
         font-size: 20px;
-        font-weight: 700;
-        margin: 20px 0 10px 0;
+        margin: 15px 0;
+        color: #333;
     }
 
-    .contact .info-item p {
-        padding: 0;
-        line-height: 24px;
-        font-size: 14px;
-        margin-bottom: 0;
+    .info-item p {
+        color: #666;
     }
 
-.contact .php-email-form {
-    background: white;
-    padding: 30px;
-    height: 100%;
+    .info-item:hover {
+        transform: translateY(-5px);
+    }
+
+.php-email-form .form-control {
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    padding: 15px;
+    transition: border-color 0.3s;
 }
 
-    .contact .php-email-form input[type=text],
-    .contact .php-email-form input[type=email],
-    .contact .php-email-form textarea {
-        font-size: 14px;
-        padding: 10px 15px;
-        box-shadow: none;
-        border-radius: 0;
-        color: var(--default-color);
-        background-color: white;
-        border-color: #000000;
+    .php-email-form .form-control:focus {
+        border-color: #0056b3; /* Darker blue on focus */
     }
 
-        .contact .php-email-form input[type=text]:focus,
-        .contact .php-email-form input[type=email]:focus,
-        .contact .php-email-form textarea:focus {
-            border-color: var(--accent-color);
-        }
+.php-email-form button {
+    background-color: #007bff; /* Primary color */
+    color: #fff;
+    border-radius: 8px;
+    padding: 15px 30px;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
 
-        .contact .php-email-form input[type=text]::placeholder,
-        .contact .php-email-form input[type=email]::placeholder,
-        .contact .php-email-form textarea::placeholder {
-            color: color-mix(in srgb, var(--default-color), transparent 70%);
-        }
-
-    .contact .php-email-form button[type=submit] {
-        background: var(--accent-color);
-        color: var(--contrast-color);
-        border: 0;
-        padding: 10px 30px;
-        transition: 0.4s;
-        border-radius: 4px;
+    .php-email-form button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: translateY(-2px);
     }
-
-        .contact .php-email-form button[type=submit]:hover {
-            background: color-mix(in srgb, var(--accent-color), transparent 20%);
-        }
 
 /*--------------------------------------------------------------
 # Service Details Section
 --------------------------------------------------------------*/
+
+/* The .service-box class defines the main container for each service detail. */
 .service-details .service-box {
-    background-color: var(--surface-color);
-    padding: 20px;
-    box-shadow: 0px 2px 20px white;
+    background-color: var(--surface-color); /* Sets the background color using a CSS variable. */
+    padding: 20px; /* Adds padding inside the box for spacing. */
+    box-shadow: 0px 2px 20px white; /* Creates a soft shadow effect around the box. */
 }
 
+    /* Adds margin to the top of service boxes that follow another service box for spacing. */
     .service-details .service-box + .service-box {
-        margin-top: 30px;
+        margin-top: 30px; /* Ensures space between consecutive service boxes. */
     }
 
+    /* Styles for the service title within the service box. */
     .service-details .service-box h4 {
-        font-size: 20px;
-        font-weight: 700;
-        border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 92%);
-        padding-bottom: 15px;
-        margin-bottom: 15px;
+        font-size: 20px; /* Sets the font size for the heading. */
+        font-weight: 700; /* Makes the font bold. */
+        border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 92%); /* Creates a bottom border with a mixed color. */
+        padding-bottom: 15px; /* Adds space below the heading. */
+        margin-bottom: 15px; /* Adds space below the heading. */
     }
 
+/* Styles for the list of services. */
 .service-details .services-list {
-    background-color: var(--surface-color);
+    background-color: var(--surface-color); /* Sets the background color for the services list. */
 }
 
+    /* Styles for each service link within the services list. */
     .service-details .services-list a {
-        color: color-mix(in srgb, var(--default-color), transparent 20%);
-        background-color: color-mix(in srgb, var(--default-color), transparent 96%);
-        display: flex;
-        align-items: center;
-        padding: 12px 15px;
-        margin-top: 15px;
-        transition: 0.3s;
+        color: color-mix(in srgb, var(--default-color), transparent 20%); /* Sets the text color with a mixed color. */
+        background-color: color-mix(in srgb, var(--default-color), transparent 96%); /* Sets a light background color for the links. */
+        display: flex; /* Enables flexbox layout for easy alignment. */
+        align-items: center; /* Centers items vertically within the link. */
+        padding: 12px 15px; /* Adds padding around the link text. */
+        margin-top: 15px; /* Adds space above each link. */
+        transition: 0.3s; /* Smooth transition for hover effects. */
     }
 
+        /* Removes top margin for the first link in the list. */
         .service-details .services-list a:first-child {
-            margin-top: 0;
+            margin-top: 0; /* Resets margin for the first link. */
         }
 
+        /* Styles for icons within the service links. */
         .service-details .services-list a i {
-            font-size: 16px;
-            margin-right: 8px;
-            color: var(--accent-color);
+            font-size: 16px; /* Sets the size of the icon. */
+            margin-right: 8px; /* Adds space between the icon and text. */
+            color: var(--accent-color); /* Sets the color of the icon using a variable. */
         }
 
+        /* Styles for the active link in the services list. */
         .service-details .services-list a.active {
-            color: var(--contrast-color);
-            background-color: var(--accent-color);
+            color: var(--contrast-color); /* Changes text color for active link. */
+            background-color: var(--accent-color); /* Changes background color for active link. */
         }
 
+            /* Changes icon color for active links. */
             .service-details .services-list a.active i {
-                color: var(--contrast-color);
+                color: var(--contrast-color); /* Ensures icon matches the active link text color. */
             }
 
+        /* Styles for hover effects on service links. */
         .service-details .services-list a:hover {
-            background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
-            color: var(--accent-color);
+            background-color: color-mix(in srgb, var(--accent-color), transparent 95%); /* Changes background on hover. */
+            color: var(--accent-color); /* Changes text color on hover. */
         }
 
+/* Styles for the download catalog section. */
 .service-details .download-catalog a {
-    color: var(--default-color);
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    transition: 0.3s;
-    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    color: var(--default-color); /* Sets text color for download links. */
+    display: flex; /* Enables flexbox for alignment. */
+    align-items: center; /* Centers items vertically. */
+    padding: 10px 0; /* Adds padding around the link. */
+    transition: 0.3s; /* Smooth transition for hover effects. */
+    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); /* Adds a top border with mixed color. */
 }
 
+    /* Resets border and padding for the first link in the download catalog. */
     .service-details .download-catalog a:first-child {
-        border-top: 0;
-        padding-top: 0;
+        border-top: 0; /* Removes the top border for the first link. */
+        padding-top: 0; /* Removes top padding for the first link. */
     }
 
+    /* Resets padding for the last link in the download catalog. */
     .service-details .download-catalog a:last-child {
-        padding-bottom: 0;
+        padding-bottom: 0; /* Removes bottom padding for the last link. */
     }
 
+    /* Styles for icons in the download catalog section. */
     .service-details .download-catalog a i {
-        font-size: 24px;
-        margin-right: 8px;
-        color: var(--accent-color);
+        font-size: 24px; /* Sets icon size. */
+        margin-right: 8px; /* Adds space between icon and text. */
+        color: var(--accent-color); /* Sets icon color. */
     }
 
+    /* Changes link color on hover for the download catalog. */
     .service-details .download-catalog a:hover {
-        color: var(--accent-color);
+        color: var(--accent-color); /* Changes text color on hover. */
     }
 
+/* Styles for the help box. */
 .service-details .help-box {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
-    margin-top: 30px;
-    padding: 30px 15px;
+    background-color: var(--accent-color); /* Sets background color for the help box. */
+    color: var(--contrast-color); /* Sets text color for the help box. */
+    margin-top: 30px; /* Adds space above the help box. */
+    padding: 30px 15px; /* Adds padding inside the help box. */
 }
 
+    /* Styles for the help icon within the help box. */
     .service-details .help-box .help-icon {
-        font-size: 48px;
+        font-size: 48px; /* Sets icon size. */
     }
 
+    /* Ensures text color for heading and links in the help box. */
     .service-details .help-box h4,
     .service-details .help-box a {
-        color: var(--contrast-color);
+        color: var(--contrast-color); /* Sets text color to contrast color. */
     }
 
+/* Styles for images in the service details section. */
 .service-details .services-img {
+    margin-bottom: 20px; /* Adds space below the images. */
+}
+
+/* Styles for main service title. */
+.service-details h3 {
+    font-size: 26px; /* Sets font size for the main title. */
+    font-weight: 700; /* Makes the font bold. */
+}
+
+/* Styles for paragraphs in the service details section. */
+.service-details p {
+    font-size: 15px; /* Sets font size for paragraphs. */
+}
+
+/* Styles for lists in the service details section. */
+.service-details ul {
+    list-style: none; /* Removes default list style. */
+    padding: 0; /* Resets padding for the list. */
+    font-size: 15px; /* Sets font size for list items. */
+}
+
+    /* Styles for each list item in the service details section. */
+    .service-details ul li {
+        padding: 5px 0; /* Adds vertical space for list items. */
+        display: flex; /* Enables flexbox layout for list items. */
+        align-items: center; /* Centers items vertically. */
+    }
+
+    /* Styles for icons within list items. */
+    .service-details ul i {
+        font-size: 20px; /* Sets icon size. */
+        margin-right: 8px; /* Adds space between icon and text. */
+        color: var(--accent-color); /* Sets icon color using a variable. */
+    }
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 1000;
+    white-space: nowrap;
+}
+
+/*Login Form*/
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background-color: white; /* Light gray background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.form-title {
+    text-align: center;
+    color: blue;
     margin-bottom: 20px;
 }
 
-.service-details h3 {
-    font-size: 26px;
-    font-weight: 700;
+.form-group {
+    margin-bottom: 20px;
 }
 
-.service-details p {
-    font-size: 15px;
+.form-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
 }
 
-.service-details ul {
-    list-style: none;
-    padding: 0;
-    font-size: 15px;
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da; /* Lighter border color */
+    border-radius: 5px;
 }
 
-    .service-details ul li {
-        padding: 5px 0;
-        display: flex;
-        align-items: center;
+.login-btn-primary {
+    background-color: #007bff; /* Professional blue color */
+    border: none;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Button width adjusted for smaller screens */
+}
+
+    .login-btn-primary:hover {
+        background-color: #0056b3; /* Darker shade of blue on hover */
+        color: #ffffff;
     }
 
-    .service-details ul i {
-        font-size: 20px;
-        margin-right: 8px;
-        color: var(--accent-color);
+.error-message {
+    color: #dc3545; /* Error color */
+    font-size: 14px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-link {
+    color: #007bff; /* Professional blue color */
+    text-decoration: none;
+}
+
+    .text-link:hover {
+        text-decoration: underline;
+    }
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .login-form {
+        padding: 30px;
+    }
+}
+
+.password-toggle-container {
+    position: inline-block;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+    .password-toggle-container input[type="checkbox"] {
+        display: inline-block;
+    }
+
+.password-toggle-label {
+    cursor: pointer;
+}
+
+    .password-toggle-label span {
+        display: inline-block;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+/*Forgot Password*/
+.forgot-password-container {
+    margin-top: 50px;
+}
+
+.password-reset-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #e9e9e9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.forgot-password-btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #fff;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+    .forgot-password-btn-primary:hover {
+        background-color: #0056b3;
+        color: white;
+    }
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 780px) {
+    .password-reset-form {
+        max-width: 100%;
+    }
+}
+
+/* Sign Up */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.register-form {
+    max-width: 500px;
+    width: 100%;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    text-align: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 576px) {
+    .register-form {
+        padding: 20px; /* Reduce padding on smaller screens */
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .register-container {
+        padding: 10px; /* Add some breathing space */
+    }
+}
+
+
+
+.register-btn-primary {
+    background-color: #007bff; /* Professional blue color */
+    border: none;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-btn-primary:hover {
+        background-color: #0056b3; /* Darker shade of blue on hover */
+        color: white;
     }

@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Michael Kasuku\Documents\Computer Science\fourth year\Web Development\Project\vet\connect
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Michael Kasuku/Documents/Computer Science/fourth year/Web Development/Project/vet/connect/Pages/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9yZ290UGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Michael Kasuku/Documents/Computer Science/fourth year/Web Development/Project/vet/connect/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -28,6 +32,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Michael Kasuku/Documents/Computer Science/fourth year/Web Development/Project/vet/connect/Pages/PrivacyPolicy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeVBvbGljeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Michael Kasuku/Documents/Computer Science/fourth year/Web Development/Project/vet/connect/Pages/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Michael Kasuku/Documents/Computer Science/fourth year/Web Development/Project/vet/connect/Pages/Shared/_ValidationScriptsPartial.cshtml]

@@ -5,8 +5,8 @@
         public int UserId { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
-        public byte[]? VetLicenseCopy { get; set; }
-        public bool LicenseCopyApprovalStatus { get; set; } = false;
+        public string? VetLicenseNo { get; set; }
+        public bool LicenseNoApprovalStatus { get; set; } = false;
         public string? EmailAddress { get; set; }
         public bool EmailAddressConfirmed { get; set; } = false;
         public string? Password { get; set; }

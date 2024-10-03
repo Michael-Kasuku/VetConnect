@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OrpgE++2S70NtARnyoF6KjY1NgaK+p4HvhkxyUNQAdY=",
+  "Hash": "0kWrdCFuXT9w8RIrTTdHlkyz3XDOp3vCM3TWXcD0gr4=",
   "Source": "connect",
   "BasePath": "_content/connect",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\img\\about.jpg",
+      "SourceId": "connect",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\",
+      "BasePath": "_content/connect",
+      "RelativePath": "img/about.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\about.jpg"
     },
     {
       "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\img\\hero-bg.jpg",
@@ -150,12 +169,12 @@
       "OriginalItemSpec": "wwwroot\\img\\team\\lopez.jpg"
     },
     {
-      "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\img\\vetkonnect.png",
+      "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\img\\vetkonnect.jpg",
       "SourceId": "connect",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\",
       "BasePath": "_content/connect",
-      "RelativePath": "img/vetkonnect.png",
+      "RelativePath": "img/vetkonnect.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -166,7 +185,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\vetkonnect.png"
+      "OriginalItemSpec": "wwwroot\\img\\vetkonnect.jpg"
     },
     {
       "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\js\\site.js",
@@ -2238,6 +2257,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\lib\\popperjs\\popper.min.js",
+      "SourceId": "connect",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vet\\connect\\wwwroot\\",
+      "BasePath": "_content/connect",
+      "RelativePath": "lib/popperjs/popper.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\popperjs\\popper.min.js"
     }
   ]
 }

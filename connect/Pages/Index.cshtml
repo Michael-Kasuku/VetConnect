@@ -4,33 +4,44 @@
     ViewData["Title"] = "Home";
 }
 
-<header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+<header id="header" class="header d-flex align-items-center fixed-top shadow-sm bg-white">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
 
+        <!-- Logo -->
         <a href="/Index" class="logo d-flex align-items-center me-auto me-xl-0">
-            <img src="~/img/vetkonnect.png" alt="Vetkonnect">
-            <h1 class="sitename">Vetkonnect</h1>
+            <img src="~/img/vetkonnect.jpg" alt="Vet Konnect" class="img-fluid me-2" style="height: 50px;">
+            <h1 class="sitename h4 mb-0 text-primary fw-bold">Vet Konnect</h1>
         </a>
 
-        <nav id="navmenu" class="navmenu">
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#team">Team</a></li>
-                <li class="dropdown">
-                    <a href="#"><span>Help</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#faq">FAQs</a></li>
-                        <li><a href="#contact">Contact</a></li>
+        <!-- Navbar -->
+        <nav id="navmenu" class="navmenu d-none d-xl-block">
+            <ul class="d-flex list-unstyled mb-0">
+                <li><a href="#hero" class="nav-link px-3">Home </a></li>
+                <li class="dropdown position-relative">
+                    <a href="#" class="nav-link px-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><span>About Us</span></a>
+                    <ul class="dropdown-menu shadow-sm">
+                        <li><a href="#about" class="dropdown-item">About</a></li>
+                        <li><a href="#team" class="dropdown-item">Team</a></li>
+                    </ul>
+                </li>
+                <li><a href="#services" class="nav-link px-3">Services </a></li>
+                <li class="dropdown position-relative">
+                    <a href="#" class="nav-link px-3 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><span>Help</span></a>
+                    <ul class="dropdown-menu shadow-sm">
+                        <li><a href="#faq" class="dropdown-item">FAQs</a></li>
+                        <li><a href="#contact" class="dropdown-item">Contact</a></li>
                     </ul>
                 </li>
             </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="btn-getstarted" href="/Login">Get Started</a>
+        <!-- Mobile Navigation Toggle -->
+        <button class="mobile-nav-toggle d-xl-none btn btn-light border-0">
+            <i class="bi bi-list fs-3"></i>
+        </button>
 
+        <!-- Get Started Button -->
+        <a href="/Login" class="btn btn-primary btn-sm ms-3 fw-semibold">Get Started</a>
     </div>
 </header>
 
@@ -38,26 +49,136 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-        <img src="~/img/hero-bg.jpg" alt="" data-aos="fade-in">
+        <img src="/img/hero-bg.jpg" alt="hero" data-aos="fade-in">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10">
-                    <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Vetkonnect</h2>
+                    <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Vet Konnect…</h2>
                     <p data-aos="fade-up" data-aos-delay="200">
-                        <strong>Vetkonnect</strong> is an innovative platform dedicated to bridging the gap between certified veterinarians and those in need of reliable veterinary care.
+                        An integrated platform connecting Farmers and Pet Owners with certified veterinarians, essential animal care products, and a supportive community – for healthier animals and thriving livelihoods.
                     </p>
                 </div>
             </div>
         </div>
     </section>
     <!-- /Hero Section -->
-    <!-- Services Section -->
-    <section id="services" class="services section">
+    <!-- About Section -->
+    <section id="about" class="about section light-background py-5" style="background-image: url('/img/about.jpg'); background-size: cover; background-position: center;">
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row align-items-center gy-5">
+
+                <div class="col-xl-5 content">
+                    <h3 class="text-primary mb-4">About Us</h3>
+                    <p class="lead mb-4" style="font-size: 1.25rem; line-height: 1.8; text-align: justify;color:#fff">
+                        <strong>Vet Konnect</strong> is a platform that connects livestock farmers and pet owners with certified veterinarians, ensuring accessible, high-quality veterinary services across Kenya.
+                        Through our mobile app, web platform, and USSD code, users can easily find and book veterinarians, access essential veterinary products via our agrovet hub, and engage in a community forum for expert advice. We also aim to reintroduce vital animal welfare programs to improve farm productivity and animal health.
+                        By improving access to veterinary care and reviving key welfare programs, we strive to create sustainable livelihoods and strengthen communities.
+                    </p>
+                </div>
+
+                <div class="col-xl-7">
+                    <div class="row gy-4 icon-boxes">
+
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon-box text-center p-4 border rounded shadow-sm">
+                                <h4 style="color: blue;">Mission</h4>
+                                <p class="font-weight-bold">To enhance animal health, support sustainable agriculture, empower communities, and reduce inequalities in accessing care, especially in rural areas.</p>
+                            </div>
+                        </div> <!-- End Icon Box -->
+
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="icon-box text-center p-4 border rounded shadow-sm">
+                                <h4 style="color: blue;">Vision</h4>
+                                <p class="font-weight-bold">To reduce animal disease and mortality rates by providing reliable veterinary care and empowering farmers and pet owners with essential resources.</p>
+                            </div>
+                        </div> <!-- End Icon Box -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- /About Section -->
+    <!-- Team Section -->
+    <section id="team" class="team section light-background py-5">
 
         <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Our Services</h2>
-            <p>We provide a comprehensive range of services to support animal health and welfare:</p>
+        <div class="container section-title text-center mb-5" data-aos="fade-up">
+            <h2 class="text-primary">Our Team</h2>
+            <p class="lead">Meet the dedicated individuals behind our success...</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+            <div class="row gy-5">
+
+                <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card shadow-sm border-0">
+                        <div class="member-img">
+                            <img src="/img/team/josphine.jpg" class="card-img-top" alt="Josphine Otieno">
+                            <div class="social">
+                                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Josphine Otieno</h4>
+                            <span class="text-muted">Chief Executive Officer</span>
+                            <p class="member-info">BA. Community Development</p>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card shadow-sm border-0">
+                        <div class="member-img">
+                            <img src="/img/team/kasuku.jpg" class="card-img-top" alt="Michael Otieno Kasuku">
+                            <div class="social">
+                                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Michael Kasuku</h4>
+                            <span class="text-muted">Project Manager</span>
+                            <p class="member-info">Bsc. Computer Science</p>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+                <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card shadow-sm border-0">
+                        <div class="member-img">
+                            <img src="/img/team/lopez.jpg" class="card-img-top" alt="Daisy Lopez Adhiambo">
+                            <div class="social">
+                                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title">Daisy Lopez</h4>
+                            <span class="text-muted">Chief Technology Officer</span>
+                            <p class="member-info">Bsc. Information Technology</p>
+                        </div>
+                    </div>
+                </div><!-- End Team Member -->
+
+            </div>
+        </div>
+
+    </section><!-- /Team Section -->
+    <!-- Services Section -->
+    <section id="services" class="services section light-background py-5">
+
+        <!-- Section Title -->
+        <div class="container text-center section-title" data-aos="fade-up">
+            <h2 class="text-primary">Our Services</h2>
+            <p class="lead">We provide a comprehensive range of services to support animal health and welfare:</p>
         </div><!-- End Section Title -->
 
         <div class="container">
@@ -65,41 +186,48 @@
             <div class="row gy-4">
 
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-item d-flex">
-                        <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
-                        <div>
-                            <h4 class="title">Vet Directory</h4>
-                            <p class="description">Connect with certified veterinarians for advice on animal health, emergency care, and ongoing treatment.</p>
+                    <div class="service-item d-flex align-items-center p-4 shadow-sm border rounded">
+                        <div class="icon flex-shrink-0">
+                            <i class="bi bi-briefcase fs-2 text-primary"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h4 class="title fw-bold">Vet Directory</h4>
+                            <p class="description">Easily find and book certified veterinarians in your area, ensuring reliable care for your livestock and pets when you need it most.</p>
                         </div>
                     </div>
-                </div>
-                <!-- End Service Item -->
+                </div><!-- End Service Item -->
 
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-item d-flex">
-                        <div class="icon flex-shrink-0"><i class="bi bi-shop"></i></div>
-                        <div>
-                            <h4 class="title">Marketplace</h4>
-                            <p class="description">Access a wide range of high-quality veterinary and animal care products at competitive prices.</p>
+                    <div class="service-item d-flex align-items-center p-4 shadow-sm border rounded">
+                        <div class="icon flex-shrink-0">
+                            <i class="bi bi-shop fs-2 text-primary"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h4 class="title fw-bold">Agrovet Hub</h4>
+                            <p class="description">Access a wide range of high-quality veterinary and animal care products at competitive prices, ensuring you have the essentials to keep your animals healthy and thriving.</p>
                         </div>
                     </div>
                 </div><!-- End Service Item -->
 
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-item d-flex">
-                        <div class="icon flex-shrink-0"><i class="bi bi-book"></i></div>
-                        <div>
-                            <h4 class="title">Educational Resources</h4>
+                    <div class="service-item d-flex align-items-center p-4 shadow-sm border rounded">
+                        <div class="icon flex-shrink-0">
+                            <i class="bi bi-book fs-2 text-primary"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h4 class="title fw-bold">Educational Resources</h4>
                             <p class="description">Explore blogs, webinars, and peer-reviewed articles on the latest trends and best practices in veterinary science.</p>
                         </div>
                     </div>
                 </div><!-- End Service Item -->
 
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-item d-flex">
-                        <div class="icon flex-shrink-0"><i class="bi bi-chat"></i></div>
-                        <div>
-                            <h4 class="title">Community Forum</h4>
+                    <div class="service-item d-flex align-items-center p-4 shadow-sm border rounded">
+                        <div class="icon flex-shrink-0">
+                            <i class="bi bi-chat fs-2 text-primary"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h4 class="title fw-bold">Community Forum</h4>
                             <p class="description">Engage with fellow farmers and pet owners for knowledge sharing and expert advice on animal care.</p>
                         </div>
                     </div>
@@ -110,136 +238,8 @@
         </div>
 
     </section><!-- /Services Section -->
-    <!-- Team Section -->
-    <section id="team" class="team section light-background">
-
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Our Team</h2>
-            <p>Meet the dedicated individuals behind our success...</p>
-        </div><!-- End Section Title -->
-
-        <div class="container">
-
-            <div class="row gy-5">
-
-                <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member-img">
-                        <img src="/img/team/josphine.jpg" class="img-fluid" alt="Josphine Otieno">
-                        <div class="social">
-                            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a>
-                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
-                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
-                            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h4>Josphine Otieno</h4>
-                        <span>Chief Executive Officer</span>
-                        <p>Founder</p>
-                        <p>Leads the strategic direction and overall operations of the company, ensuring alignment with our mission and vision.</p>
-                    </div>
-                </div><!-- End Team Member -->
-
-                <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-                    <div class="member-img">
-                        <img src="/img/team/kasuku.jpg" class="img-fluid" alt="Michael Otieno Kasuku">
-                        <div class="social">
-                            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a>
-                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
-                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
-                            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h4>Michael Otieno Kasuku</h4>
-                        <span>Project Manager</span>
-                        <p>Co-Founder</p>
-                        <p>Oversees project development and execution, ensuring timelines and quality standards are met while facilitating team collaboration.</p>
-                    </div>
-                </div><!-- End Team Member -->
-
-                <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
-                    <div class="member-img">
-                        <img src="/img/team/lopez.jpg" class="img-fluid" alt="Daisy Lopez Adhiambo">
-                        <div class="social">
-                            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i></a>
-                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
-                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
-                            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                    <div class="member-info text-center">
-                        <h4>Daisy Lopez Adhiambo</h4>
-                        <span>Chief Technology Officer</span>
-                        <p>Co-Founder</p>
-                        <p>Responsible for overseeing the development and implementation of technology strategies that align with our business goals.</p>
-                    </div>
-                </div><!-- End Team Member -->
-
-            </div>
-        </div>
-
-    </section><!-- /Team Section -->
-    <!-- About Section -->
-    <section id="about" class="about section light-background">
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="row align-items-xl-center gy-5">
-
-                <div class="col-xl-5 content">
-                    <h3>About Us</h3>
-                    <p class="lead mb-4" style="font-size: 1.25rem; line-height: 1.8; text-align: justify;">
-                        <strong>Vetkonnect</strong> is an innovative platform dedicated to connecting certified veterinarians with those seeking reliable veterinary care.
-                    </p>
-                    <p class="lead mb-4" style="font-size: 1.25rem; line-height: 1.8; text-align: justify;">
-                        <strong>Mission:</strong> To ensure accessible, high-quality veterinary services.
-                    </p>
-                    <p class="lead mb-4" style="font-size: 1.25rem; line-height: 1.8; text-align: justify;">
-                        <strong>Vision:</strong> To significantly reduce animal disease and mortality rates.
-                    </p>
-                </div>
-
-                <div class="col-xl-7">
-                    <div class="row gy-4 icon-boxes">
-
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="icon-box">
-                                <i class="bi bi-calendar4-week"></i>
-                                <p>Find and book qualified veterinarians effortlessly through our comprehensive vet directory.</p>
-                            </div>
-                        </div> <!-- End Icon Box -->
-
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                            <div class="icon-box">
-                                <i class="bi bi-shop"></i>
-                                <p>Access a marketplace for purchasing essential veterinary and animal care products.</p>
-                            </div>
-                        </div> <!-- End Icon Box -->
-
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                            <div class="icon-box">
-                                <i class="bi bi-chat"></i>
-                                <p>Engage in a community forum for knowledge sharing and expert advice on animal care.</p>
-                            </div>
-                        </div> <!-- End Icon Box -->
-
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                            <div class="icon-box">
-                                <i class="bi bi-heart-pulse"></i>
-                                <p>Support vital animal welfare programs, such as cattle dipping days, to enhance farm productivity and animal health.</p>
-                            </div>
-                        </div> <!-- End Icon Box -->
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </section><!-- /About Section -->
-    <!-- Faq Section -->
-    <section id="faq" class="faq section">
+    <!-- FAQ Section -->
+    <section id="faq" class="faq section light-background py-5">
 
         <div class="container">
 
@@ -247,8 +247,8 @@
 
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="content px-xl-5">
-                        <h3>Frequently Asked Questions (FAQs)</h3>
-                        <p>
+                        <h3 class="display-5 text-primary">Frequently Asked Questions (FAQs)</h3>
+                        <p class="lead">
                             Discover answers to common queries regarding our platform, services, and policies.
                         </p>
                     </div>
@@ -258,6 +258,7 @@
 
                     <div class="faq-container">
                         <div class="accordion accordion-flush" id="faqAccordion">
+
                             <!-- FAQ Item 1 -->
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -267,90 +268,59 @@
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        <strong>Booking an appointment is easy!</strong> Log in to your Vetkonnect account, browse the available veterinarians, select one that matches your needs, and choose an available time slot. Confirm your booking, and you will receive a confirmation email with all the details.
+                                        <strong>Booking an appointment is easy!</strong> Log in to your Vet Konnect account, browse the available veterinarians, select one that matches your needs, and choose an available time slot. Confirm your booking, and you will receive a confirmation email with all the details.
                                     </div>
                                 </div>
                             </div>
+
                             <!-- FAQ Item 2 -->
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        What services do you offer?
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        We offer a wide range of veterinary services, including:
-                                        <ul>
-                                            <li>Consultations and check-ups</li>
-                                            <li>Vaccinations and routine immunizations</li>
-                                            <li>Surgical procedures</li>
-                                            <li>Nutrition and diet consultations</li>
-                                            <li>Emergency care for both pets and livestock</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- FAQ Item 3 -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                         Can I reschedule or cancel my appointment?
                                     </button>
                                 </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
                                         Yes, you can reschedule or cancel your appointment through your account. Simply log in, go to "My Appointments," select the booking you want to change, and choose a new time or cancel altogether. <strong>Note:</strong> Cancellations must be made at least 24 hours before the appointment to avoid charges.
                                     </div>
                                 </div>
                             </div>
-                            <!-- FAQ Item 4 -->
+
+                            <!-- FAQ Item 3 -->
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        How do I contact a vet in case of an emergency?
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        For emergencies, you can contact our 24/7 emergency hotline at <strong>0712345678</strong>.
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- FAQ Item 5 -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSix">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                         How can I get updates on my pet’s treatment?
                                     </button>
                                 </h2>
-                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
                                         Once your pet is under care, you can track their treatment progress through our online portal. Vets regularly update records, and you’ll also receive notifications by email or text with important updates and recommendations.
                                     </div>
                                 </div>
                             </div>
-                        </div><!-- End Faq item-->
+
+                        </div><!-- End FAQ Accordion -->
                     </div>
+
                 </div>
             </div>
         </div>
-    </section><!-- /Faq Section -->
+    </section><!-- /FAQ Section -->
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Contact Us</h2>
+            <h2 class="text-primary">Contact Us</h2>
             <p>We’d love to hear from you!</p>
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-
             <div class="row gy-4">
 
                 <div class="col-lg-6">
-
                     <div class="row gy-4">
                         <div class="col-md-6">
                             <div class="info-item" data-aos="fade" data-aos-delay="200">
@@ -387,47 +357,44 @@
                         </div><!-- End Info Item -->
 
                     </div>
-
                 </div>
 
                 <div class="col-lg-6">
                     <!-- Display Success/Error Message -->
                     @if (TempData["MessageStatus"] != null)
                     {
-                            <div id="alert-box" class="alert alert-@TempData["AlertType"] alert-dismissible fade show" role="alert">
-                                <strong>@TempData["MessageStatus"]</strong>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
+                        <div id="alert-box" class="alert alert-@TempData["AlertType"] alert-dismissible fade show" role="alert">
+                            <strong>@TempData["MessageStatus"]</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
                     }
                     <form method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                        @Html.AntiForgeryToken() <!-- CSRF Token -->
                         <div class="row gy-4">
+                            <div class="col-md-6">
+                                <input type="text" name="name" class="form-control" placeholder="Enter your name" required autocomplete="true">
+                            </div>
 
                             <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Enter your name" required autocomplete=true>
-                            </div>
-
-                            <div class="col-md-6 ">
-                                <input type="email" class="form-control" name="email" placeholder="Enter your email" required autocomplete=true>
+                                <input type="email" class="form-control" name="email" placeholder="Enter your email" required autocomplete="true">
                             </div>
 
                             <div class="col-12">
-                                <input type="text" class="form-control" name="subject" placeholder="Enter subject" required autocomplete=true>
+                                <input type="text" class="form-control" name="subject" placeholder="Enter subject" required autocomplete="true">
                             </div>
 
                             <div class="col-12">
-                                <textarea class="form-control" name="message" rows="6" placeholder="Enter your message" required autocomplete=true></textarea>
+                                <textarea class="form-control" name="message" rows="6" placeholder="Enter your message" required autocomplete="true"></textarea>
                             </div>
 
                             <div class="col-12 text-center">
-                                <button type="submit">Send Message</button>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
                             </div>
-
                         </div>
                     </form>
                 </div><!-- End Contact Form -->
 
             </div>
-
         </div>
 
     </section><!-- /Contact Section -->
@@ -439,15 +406,13 @@
     <div class="container footer-top">
         <div class="row gy-4">
             <div class="col-lg-5 col-md-12 footer-about">
-                <a href="index.html" class="logo d-flex align-items-center">
-                    <span class="sitename">Vetkonnect</span>
-                </a>
-                <p>Connect with us via social media:</p>
+                <h4>Connect with Us</h4>
+                <p>Stay connected via social media:</p>
                 <div class="social-links d-flex mt-4">
-                    <a href="https://www.twitter.com"><i class="bi bi-twitter-x"></i></a>
-                    <a href="https://www.facebook.com"><i class="bi bi-facebook"></i></a>
-                    <a href="https://www.instagram.com"><i class="bi bi-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/vet-konnect-4b0741326/"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://www.twitter.com" class="social-icon"><i class="bi bi-twitter"></i></a>
+                    <a href="https://www.facebook.com" class="social-icon"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/vet-konnect-4b0741326/" class="social-icon"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
 
@@ -455,10 +420,10 @@
                 <h4>Useful Links</h4>
                 <ul>
                     <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About us</a></li>
+                    <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="/TermsOfService">Terms of service</a></li>
-                    <li><a href="/PrivacyPolicy">Privacy policy</a></li>
+                    <li><a href="/TermsOfService">Terms of Service</a></li>
+                    <li><a href="/PrivacyPolicy">Privacy Policy</a></li>
                 </ul>
             </div>
 
@@ -466,7 +431,7 @@
                 <h4>Our Services</h4>
                 <ul>
                     <li><a href="#">Vet Directory</a></li>
-                    <li><a href="#">Marketplace</a></li>
+                    <li><a href="#">Agrovet Hub</a></li>
                     <li><a href="#">Educational Content</a></li>
                     <li><a href="#">Community Forum</a></li>
                 </ul>
@@ -484,7 +449,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-        <p>© <span>2024</span> <strong class="sitename">Vetkonnect</strong></p>
+        <p>© <span>2024</span> <strong class="sitename">Vet Konnect</strong></p>
         <div class="credits">
             <span>All Rights Reserved!</span>
         </div>

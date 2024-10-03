@@ -2,56 +2,62 @@
     "use strict";
 
     /**
-     * Apply .scrolled class to the body as the page is scrolled down
+     * Apply .scrolled class to the body as the page is scrolled down.
      */
     function toggleScrolled() {
-        const selectBody = document.querySelector('body');
-        const selectHeader = document.querySelector('#header');
-        if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-        window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+        const body = document.querySelector('body');
+        const header = document.querySelector('#header');
+        const isHeaderSticky = header.classList.contains('scroll-up-sticky') ||
+            header.classList.contains('sticky-top') ||
+            header.classList.contains('fixed-top');
+
+        if (!isHeaderSticky) return;
+
+        body.classList.toggle('scrolled', window.scrollY > 100);
     }
 
     document.addEventListener('scroll', toggleScrolled);
     window.addEventListener('load', toggleScrolled);
 
     /**
-     * Mobile nav toggle
+     * Mobile navigation toggle.
      */
     const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
-    function mobileNavToogle() {
-        document.querySelector('body').classList.toggle('mobile-nav-active');
+    function toggleMobileNav() {
+        document.body.classList.toggle('mobile-nav-active');
         mobileNavToggleBtn.classList.toggle('bi-list');
         mobileNavToggleBtn.classList.toggle('bi-x');
     }
-    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+
+    mobileNavToggleBtn.addEventListener('click', toggleMobileNav);
 
     /**
-     * Hide mobile nav on same-page/hash links
+     * Hide mobile nav on same-page/hash links.
      */
-    document.querySelectorAll('#navmenu a').forEach(navmenu => {
-        navmenu.addEventListener('click', () => {
-            if (document.querySelector('.mobile-nav-active')) {
-                mobileNavToogle();
+    document.querySelectorAll('#navmenu a').forEach(navItem => {
+        navItem.addEventListener('click', () => {
+            if (document.body.classList.contains('mobile-nav-active')) {
+                toggleMobileNav();
             }
         });
-
     });
 
     /**
-     * Toggle mobile nav dropdowns
+     * Toggle mobile nav dropdowns.
      */
-    document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-        navmenu.addEventListener('click', function (e) {
+    document.querySelectorAll('.navmenu .toggle-dropdown').forEach(dropdownToggle => {
+        dropdownToggle.addEventListener('click', function (e) {
             e.preventDefault();
-            this.parentNode.classList.toggle('active');
-            this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
+            const parentItem = this.parentNode;
+            parentItem.classList.toggle('active');
+            parentItem.nextElementSibling.classList.toggle('dropdown-active');
             e.stopImmediatePropagation();
         });
     });
 
     /**
-     * Preloader
+     * Preloader handling.
      */
     const preloader = document.querySelector('#preloader');
     if (preloader) {
@@ -61,23 +67,64 @@
     }
 
     /**
-     * Scroll top button
+     * Scroll to top button functionality.
      */
-    let scrollTop = document.querySelector('.scroll-top');
+    const scrollTopBtn = document.querySelector('.scroll-top');
 
-    function toggleScrollTop() {
-        if (scrollTop) {
-            window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+    function toggleScrollTopButton() {
+        if (scrollTopBtn) {
+            scrollTopBtn.classList.toggle('active', window.scrollY > 100);
         }
     }
-    scrollTop.addEventListener('click', (e) => {
+
+    scrollTopBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    window.addEventListener('load', toggleScrollTopButton);
+    document.addEventListener('scroll', toggleScrollTopButton);
+
+    /**
+     * Smooth scroll for navigation links.
+     */
+    document.querySelectorAll('a.scroll-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
-    window.addEventListener('load', toggleScrollTop);
-    document.addEventListener('scroll', toggleScrollTop);
+    /**
+     * Tooltip functionality.
+     */
+    document.querySelectorAll('[data-tooltip]').forEach(element => {
+        element.addEventListener('mouseenter', function () {
+            const tooltipText = this.getAttribute('data-tooltip');
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.innerText = tooltipText;
+            document.body.appendChild(tooltip);
+
+            const rect = this.getBoundingClientRect();
+            tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight}px`;
+            tooltip.style.left = `${rect.left + (this.offsetWidth / 2) - (tooltip.offsetWidth / 2)}px`;
+
+            this._tooltip = tooltip; // Store tooltip reference for removal later
+        });
+
+        element.addEventListener('mouseleave', function () {
+            if (this._tooltip) {
+                this._tooltip.remove();
+                delete this._tooltip; // Remove reference
+            }
+        });
+    });
 })();
